@@ -56,6 +56,10 @@ class CircularLinkedList:
         elif index == 0:
             new_node.next = self.head
             self.head = self.tail.next = new_node
+        elif index == len(self):
+            new_node.next = self.tail.next
+            self.tail.next = new_node
+            self.tail = new_node
 
         else:
             temp = self.head
@@ -63,8 +67,6 @@ class CircularLinkedList:
                 temp = temp.next
             new_node.next = temp.next
             temp.next = new_node
-            if index == len(self) - 1:
-                self.tail = new_node
 
     def insert_head(self, data: Any) -> None:
         self.insert_at_index(0, data)
@@ -78,15 +80,15 @@ class CircularLinkedList:
         if self.head == self.tail:
             self.head = self.tail = None
         elif index == 0:
-            self.tail.next = self.head
             self.head = self.head.next
+            self.tail.next = self.head
         else:
             temp = self.head
             for i in range(index - 1):
                 temp = temp.next
-            temp.next = temp.next.next
             if index == len(self) - 1:
                 self.tail = temp
+            temp.next = temp.next.next
 
     def delete_head(self) -> None:
         self.delete_at_index(0)
@@ -102,7 +104,7 @@ if __name__ == '__main__':
     l1.insert_tail(2)
     l1.insert_head(3)
     l1.insert_tail(4)
-
+    l1.insert_at_index(2, 7)
     print(l1)
 
     print("After deleting")
