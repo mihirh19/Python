@@ -2,8 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/WebDevelopment/fastapi/blog" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/WebDevelopment/fastapi/todo" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/WebDevelopment/flask/todo2" vcs="Git" />
   </component>
 </project>
