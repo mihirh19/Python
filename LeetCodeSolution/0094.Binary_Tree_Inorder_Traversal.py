@@ -1,5 +1,10 @@
 """
-Given the root of a binary tree, return the preorder traversal of its nodes' values.
+94. Binary Tree Inorder Traversal
+Easy
+11.3K
+559
+Companies
+Given the root of a binary tree, return the inorder traversal of its nodes' values.
 
 
 
@@ -7,7 +12,7 @@ Example 1:
 
 
 Input: root = [1,null,2,3]
-Output: [1,2,3]
+Output: [1,3,2]
 Example 2:
 
 Input: root = []
@@ -29,7 +34,6 @@ Follow up: Recursive solution is trivial, could you do it iteratively?
 from typing import Optional, List
 
 
-# Definition for a binary tree node.
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -38,19 +42,16 @@ class TreeNode:
 
 
 class Solution:
-    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         ans = []
 
         def dfs(node):
             if not node:
                 return
-            ans.append(node.val)
+
             dfs(node.left)
+            ans.append(node.val)
             dfs(node.right)
 
         dfs(root)
         return ans
-
-
-if __name__ == '__main__':
-    print("hiii")
