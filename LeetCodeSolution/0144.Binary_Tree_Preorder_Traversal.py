@@ -40,3 +40,7 @@ class TreeNode:
 class Solution:
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         pass
+
+
+if __name__ == '__main__':
+    print("hiii")
