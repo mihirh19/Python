@@ -15,7 +15,7 @@ from typing import Any, Iterator
 class Node:
     def __init__(self, data):
         self.data: Any = data
-        self.next = None
+        self.next: Node | None = None
 
     def __repr__(self):
         return f"{self.data}"
@@ -37,6 +37,9 @@ class CircularLinkedList:
 
     def __len__(self) -> int:
         return sum(1 for _ in self)
+    
+    def is_empty(self) -> bool:
+        return len(self) == 0
 
     def __repr__(self):
         string = ""
@@ -73,6 +76,29 @@ class CircularLinkedList:
 
     def insert_tail(self, data: Any) -> None:
         self.insert_at_index(len(self), data)
+    
+    def insert_nth(self, index: int, data: Any) -> None:
+        if index < 0 or index > len(self):
+            raise IndexError(f"Index {index} is out of range")
+        
+        new_node = Node(data)
+        if self.head is None:
+            new_node.next = new_node  # first node points itself
+            self.tail = self.head = new_node
+        elif index ==0:
+            new_node.next = self.head
+            self.head = self.tail.next = new_node
+        else:
+            temp = self.head
+            for _ in range(index - 1):
+                temp = temp.next
+            new_node.next = temp.next
+            temp.next = new_node
+            if index == len(self) - 1:  # insert at tail
+                self.tail = new_node
+    
+    
+    
 
     def delete_at_index(self, index: int) -> None:
         if index < 0 or index >= len(self):
