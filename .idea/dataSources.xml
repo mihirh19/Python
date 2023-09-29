@@ -8,12 +8,17 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="movie" uuid="0e912660-79af-4c60-b29e-65ada9a52419">
+    <data-source source="LOCAL" name="movie" uuid="9bcdb0dd-230d-42e3-a0f3-c758c4d71b19">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\course\DDU\New_python\DataScience_ML\Imdb-dataset-analysis\movie.sqlite</jdbc-url>
+      <jdbc-url>jdbc:sqlite:D:\course\DDU\New_python\DataScience_ML\Imdb-dataset-analysis\imdbsqlitedataset\movie.sqlite</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
+      <libraries>
+        <library>
+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.40.1/org/xerial/sqlite-jdbc/3.40.1.0/sqlite-jdbc-3.40.1.0.jar</url>
+        </library>
+      </libraries>
     </data-source>
   </component>
 </project>

@@ -5,10 +5,8 @@
    "python.formatting.provider": "none",
    "files.autoSave": "afterDelay",
    "files.autoSaveDelay": 100,
-   "workbench.productIconTheme": "fluent-icons",
-   "vscodeFluent.projects": [
-      
-   ],
+   "workbench.productIconTheme": "material-product-icons",
+   "vscodeFluent.projects": [],
    "python.testing.unittestArgs": [
       "-v",
       "-s",
